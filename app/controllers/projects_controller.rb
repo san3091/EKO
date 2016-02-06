@@ -1,3 +1,5 @@
+require 'pp'
+
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
@@ -24,6 +26,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+    p "*" * 1000
+    pp project_params
+    p "*" * 1000
     @project = Project.new(project_params)
 
     respond_to do |format|
@@ -69,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params[:project]
+      params[:project].permit(:description)
     end
 end
