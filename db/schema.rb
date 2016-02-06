@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206184220) do
+ActiveRecord::Schema.define(version: 20160206210845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,19 @@ ActiveRecord::Schema.define(version: 20160206184220) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "decription"
+    t.integer  "phase_id"
   end
+
+  add_index "items", ["phase_id"], name: "index_items_on_phase_id", using: :btree
 
   create_table "phases", force: :cascade do |t|
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "project_id"
   end
+
+  add_index "phases", ["project_id"], name: "index_phases_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -45,6 +51,8 @@ ActiveRecord::Schema.define(version: 20160206184220) do
   add_index "sources", ["item_id"], name: "index_sources_on_item_id", using: :btree
   add_index "sources", ["phase_id"], name: "index_sources_on_phase_id", using: :btree
 
+  add_foreign_key "items", "phases"
+  add_foreign_key "phases", "projects"
   add_foreign_key "sources", "items"
   add_foreign_key "sources", "phases"
 end
