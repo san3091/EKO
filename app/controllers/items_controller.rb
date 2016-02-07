@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
     get_project_id(params[:id])
   end
 
+
   # GET /items/new
   def new
     @item = Item.new
@@ -26,6 +27,7 @@ class ItemsController < ApplicationController
     phase_id = Item.find(item_id).phase_id
     @project_id = Phase.find(phase_id).project_id
   end
+
 
   # POST /items
   # POST /items.json
@@ -70,11 +72,13 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      unless params[:id].nil?
+        @item = Item.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:url, :phase_id)
+      params.require(:item).permit(:url, :phase_id, :name)
     end
 end

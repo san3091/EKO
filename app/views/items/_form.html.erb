@@ -19,6 +19,10 @@
     <%= f.text_field :url %>
   </div>
   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
     <%= f.hidden_field :phase_id, value: params[:format] %>
   </div>
   <div class="actions">

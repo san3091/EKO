@@ -8,14 +8,16 @@
 <strong>Phases:</strong>
 <% @project.phases.each do |phase| %>
     <p>Description: <%= phase.description %></p>
-    <% p "~"*1000; p phase.items; p "~"*1000 %>
     <% phase.items.each do |item| %>
-      <p>URL: <%= item.url %></p>
+      <%= link_to item_path do %>
+        <p>Name: <%= item.name %></p>
+        <p>URL: <%= item.url %></p>
+      <% end %>
     <% end %>
     <%= link_to 'Add Item', new_item_path(phase.id) %>
 <% end %>
 <h3>New Phase</h3>
-<%= render 'phases/form' %> 
+<%= render 'phases/form' %>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
