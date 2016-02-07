@@ -8,7 +8,7 @@
         <li><%= message %></li>
 
         <% begin %>
-          <% phase.items.each do |item| %>
+          <% @phase.items.each do |item| %>
           <iframe width="200" height="200" src="#{item.url}" frameborder="0" allowfullscreen></iframe>
           <% end %>
         <% rescue %>
