@@ -3,11 +3,13 @@ class ItemsController < ApplicationController
 
 
   # like function
-    def add_like(id)
-      item = Item.find(1)
-      current_num_likes = item.like
-      @num_likes = current_num_likes + 1
-    end
+  def add_like
+    item = Item.find(1)
+    item.like = 0
+    @current_num_likes = item.like += 1
+    redirect_to item_path
+  end
+  helper_method :add_like
 
   # GET /items
   # GET /items.json

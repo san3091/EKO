@@ -3,14 +3,11 @@
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
-  <!-- like button -->
-  <a class="_ebwb5 _1tv0k _345gm coreSpriteHeartOpen" href="#" role="button" data-reactid=".0.1.0.1.0.$1179872441708307950.2.2.0">Like</a>
 </p>
 
 <strong>Phases:</strong>
 <% @project.phases.each do |phase| %>
     <p>Description: <%= phase.description %></p>
-    <% p "~"*1000; p phase.items; p "~"*1000 %>
     <% phase.items.each do |item| %>
       <p>URL: <%= item.url %></p>
     <% end %>

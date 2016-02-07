@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :items
   resources :phases
   resources :projects
+  resources :like
+  get 'like' => 'item#add_like'
 
   root "projects#index"
   # The priority is based upon order of creation: first created -> highest priority.
