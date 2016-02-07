@@ -10,6 +10,8 @@ class PhasesController < ApplicationController
   # GET /phases/1
   # GET /phases/1.json
   def show
+    project_id = Phase.find(params[:id]).project_id
+    redirect_to(project_path(project_id))
   end
 
   # GET /phases/new

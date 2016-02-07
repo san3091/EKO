@@ -10,22 +10,28 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    get_project_id(params[:id])
+    phase_id = get_phase_id(params[:id])
+    project_id = get_project_id(phase_id)
+    redirect_to(project_path(project_id))
   end
 
 
   # GET /items/new
   def new
     @item = Item.new
+    get_project_id(params[:format])
   end
 
   # GET /items/1/edit
   def edit
   end
 
-  def get_project_id item_id
-    phase_id = Item.find(item_id).phase_id
+  def get_project_id phase_id
     @project_id = Phase.find(phase_id).project_id
+  end
+
+  def get_phase_id item_id
+    @phase_id = Item.find(item_id).phase_id
   end
 
 

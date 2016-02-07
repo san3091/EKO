@@ -16,7 +16,9 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+  <% unless @project.nil? %>
     <%= f.hidden_field :project_id, value: @project.id %>
+  <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

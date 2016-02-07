@@ -3,21 +3,26 @@
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
+  <%= link_to 'Edit', edit_project_path(@project) %>
 </p>
 
 <strong>Phases:</strong>
 <% @project.phases.each do |phase| %>
     <p>Description: <%= phase.description %></p>
+    <p><%= link_to 'Edit', edit_phase_path(phase.id) %></p>
+
     <% phase.items.each do |item| %>
       <%= link_to item_path do %>
         <p>Name: <%= item.name %></p>
         <p>URL: <%= item.url %></p>
+        <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
       <% end %>
+
     <% end %>
+
     <%= link_to 'Add Item', new_item_path(phase.id) %>
 <% end %>
 <h3>New Phase</h3>
 <%= render 'phases/form' %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

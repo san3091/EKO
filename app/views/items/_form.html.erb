@@ -11,9 +11,6 @@
     </div>
   <% end %>
 
-  <%= params %>
-  <%= params[:format] %>
-  <%= Phase.find(params[:format]).project_id %>
   <div class="field">
     <%= f.label :url %><br>
     <%= f.text_field :url %>
@@ -23,7 +20,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.hidden_field :phase_id, value: params[:format] %>
+    <% if params[:format] %>
+      <%= f.hidden_field :phase_id, value: params[:format] %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
