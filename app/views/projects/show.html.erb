@@ -3,6 +3,8 @@
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
+  <!-- like button -->
+  <a class="_ebwb5 _1tv0k _345gm coreSpriteHeartOpen" href="#" role="button" data-reactid=".0.1.0.1.0.$1179872441708307950.2.2.0">Like</a>
 </p>
 
 <strong>Phases:</strong>
@@ -15,7 +17,7 @@
     <%= link_to 'Add Item', new_item_path(phase.id) %>
 <% end %>
 <h3>New Phase</h3>
-<%= render 'phases/form' %> 
+<%= render 'phases/form' %>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

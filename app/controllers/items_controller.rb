@@ -1,15 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :like]
 
 
-  # add like function
-    def add_like(id)
-      item = Item.find(1)
-      current_num_likes = item.like
-      @num_likes = current_num_likes + 1
-    end
-    
-  # add like function
+  # like function
     def add_like(id)
       item = Item.find(1)
       current_num_likes = item.like
