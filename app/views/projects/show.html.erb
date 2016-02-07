@@ -7,14 +7,13 @@
 
 <strong>Phases:</strong>
 <% @project.phases.each do |phase| %>
-    <p><%= phase.description %></p>
+    <p>Description: <%= phase.description %></p>
     <% p "~"*1000; p phase.items; p "~"*1000 %>
     <% phase.items.each do |item| %>
-      <iframe width="420" height="315" src="#{item.url}" frameborder="0" allowfullscreen></iframe>
-      <p><% item.description %></p>
+      <p>URL: <%= item.url %></p>
     <% end %>
+    <%= link_to 'Add Item', new_item_path(@phase) %>
 <% end %>
-
 <h3>New Phase</h3>
 <%= render 'phases/form' %> 
 
