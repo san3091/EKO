@@ -11,11 +11,13 @@
     </div>
   <% end %>
 
+  <%= params %>
+  <%= params[:format] %>
+  <%= Phase.find(params[:format]).project_id %>
   <div class="field">
     <%= f.label :url %><br>
     <%= f.text_field :url %>
   </div>
-  <%= params %>
   <div class="field">
     <%= f.hidden_field :phase_id, value: params[:format] %>
   </div>

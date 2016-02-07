@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    get_project_id(params[:id])
   end
 
   # GET /items/new
@@ -19,6 +20,11 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+  end
+
+  def get_project_id item_id
+    phase_id = Item.find(item_id).phase_id
+    @project_id = Phase.find(phase_id).project_id
   end
 
   # POST /items
