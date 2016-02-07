@@ -12,7 +12,7 @@
     <% phase.items.each do |item| %>
       <p>URL: <%= item.url %></p>
     <% end %>
-    <%= link_to 'Add Item', new_item_path(@phase) %>
+    <%= link_to 'Add Item', new_item_path(phase.id) %>
 <% end %>
 <h3>New Phase</h3>
 <%= render 'phases/form' %> 
