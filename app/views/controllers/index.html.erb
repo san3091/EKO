@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Controllers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Like</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @controllers.each do |controller| %>
+      <tr>
+        <td><%= controller.like %></td>
+        <td><%= controller.name %></td>
+        <td><%= link_to 'Show', controller %></td>
+        <td><%= link_to 'Edit', edit_controller_path(controller) %></td>
+        <td><%= link_to 'Destroy', controller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Controller', new_controller_path %>

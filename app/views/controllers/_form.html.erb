@@ -1,0 +1,25 @@
+<%= form_for(@controller) do |f| %>
+  <% if @controller.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@controller.errors.count, "error") %> prohibited this controller from being saved:</h2>
+
+      <ul>
+      <% @controller.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :like %><br>
+    <%= f.number_field :like %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
