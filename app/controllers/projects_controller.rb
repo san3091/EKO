@@ -12,6 +12,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @phase = Phase.new
+    @item = Item.new
   end
 
   # GET /projects/new
@@ -26,9 +28,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    p "*" * 1000
-    pp project_params
-    p "*" * 1000
+    # p "*" * 1000
+    # pp project_params
+    # p "*" * 1000
     @project = Project.new(project_params)
 
     respond_to do |format|

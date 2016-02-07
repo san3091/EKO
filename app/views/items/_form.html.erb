@@ -6,6 +6,15 @@
       <ul>
       <% @item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
+
+        <% begin %>
+          <% phase.items.each do |item| %>
+          <iframe width="200" height="200" src="#{item.url}" frameborder="0" allowfullscreen></iframe>
+          <% end %>
+        <% rescue %>
+          <p>There are no items in this phase</p>
+        <% end %>
+
       <% end %>
       </ul>
     </div>
@@ -14,6 +23,9 @@
   <div class="field">
     <%= f.label :url %><br>
     <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :phase_id, value: @phase.id %>
   </div>
   <div class="actions">
     <%= f.submit %>

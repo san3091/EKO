@@ -5,5 +5,14 @@
   <%= @project.description %>
 </p>
 
+<strong>Phases:</strong>
+<% @project.phases.each do |phase| %>
+    <p><%= phase.description %></p>
+    <% p "~"*1000; p phase.items; p "~"*1000 %>
+<% end %>
+
+<h3>New Phase</h3>
+<%= render 'phases/form' %> 
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
