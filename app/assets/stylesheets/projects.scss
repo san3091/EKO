@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 header {
-  background: #f55;
+  background: #4c0099;
   height: 100%;
   float: left;
   position: fixed;
@@ -12,9 +12,9 @@ header {
   padding-top: 4.5em;
 
   h2 {
-    font-size: 1.6em;
+    font-size: 2em;
     color: #fff;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
 
   div {
@@ -25,6 +25,7 @@ header {
 
   .btn {
     color: #fff;
+    font-size: 0.7em;
   }
 
   a:hover {
@@ -48,6 +49,10 @@ main {
   .description {
     width: 80%;
     display: inline-block;
+
+    h3 {
+      font-size: 1.8em;
+    }
   }
 
   .options {
