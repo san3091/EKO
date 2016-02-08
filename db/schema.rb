@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207192959) do
+ActiveRecord::Schema.define(version: 20160206210845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "decription"
-    t.integer  "phase_id"
+    t.text     "description"
     t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "phase_id"
   end
 
   add_index "items", ["phase_id"], name: "index_items_on_phase_id", using: :btree
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 20160207192959) do
   add_index "phases", ["project_id"], name: "index_phases_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.text     "description"
   end
 
   add_foreign_key "items", "phases"

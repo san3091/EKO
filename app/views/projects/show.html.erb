@@ -13,8 +13,9 @@
 
     <% phase.items.each do |item| %>
       <%= link_to item_path do %>
-        <p>Name: <%= item.name %></p>
-        <p>URL: <%= item.url %></p>
+        <p><%= item.name %></p>
+        <p><%= item.decription %></p>
+        <p><%= item.url %></p>
         <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
       <% end %>
 
