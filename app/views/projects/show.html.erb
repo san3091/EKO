@@ -14,8 +14,8 @@
     <% phase.items.each do |item| %>
       <%= link_to item_path do %>
         <p><%= item.name %></p>
-        <p><%= item.decription %></p>
-        <p><%= item.url %></p>
+        <p><%= item.description %></p>
+        <p><iframe width="260" height="200" src="https://www.youtube.com/embed/<%= item.url %>" frameborder="0" allowfullscreen></iframe></p>
         <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
       <% end %>
 

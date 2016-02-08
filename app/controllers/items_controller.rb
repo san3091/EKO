@@ -38,7 +38,20 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+
+    # p "*" * 1000
+    # p item_params
+    # p item_params[:url].split('/')[-1]
+    # video_id = item_params[:url].split('/')[-1]
+    # p item_params[:url] = video_id
+    # p "*" * 1000
+
+    # video_id = item_params[:url].split('/')[-1]
+    # item_params[:url] = video_id
+    
     @item = Item.new(item_params)
+
+    @item.update(url: Item.get_video_id(@item))
 
     respond_to do |format|
       if @item.save
@@ -85,6 +98,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:url, :phase_id, :name)
+      params.require(:item).permit(:url, :phase_id, :name, :description)
     end
 end
