@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+  <div class="form">
+    <div class="field">
+      <%= f.text_field :name, class: "transparent text", placeholder: "Name" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :description, class: "transparent text", placeholder: "Description" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :url, class: "transparent text", placeholder: "Youtube URL" %>
+    </div>
   </div>
   <div class="field">
     <% if params[:format] %>
@@ -29,6 +28,6 @@
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class: "submit" %>
   </div>
 <% end %>
