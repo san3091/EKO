@@ -1,6 +1,6 @@
 <header>
   <div>
-    <h2>PROJECTS</h2>
+    <a href="/projects" id="index"><h2>PROJECTS</h2></a>
     <%= link_to 'New Project', new_project_path, class: "btn" %>
   </div>
 </header>
@@ -8,7 +8,7 @@
 
 <main>
   <% @projects.each do |project| %>
-      <section class="project">
+      <section>
         <div class="name">
           <h3>
             <%= link_to project do %>

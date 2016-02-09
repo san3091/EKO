@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<header>
+  <div>
+    <h3><%= @project.name %></h3>
+    <%= link_to 'Projects', projects_path, class: "btn" %>
+  </div>
+</header>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-  <%= link_to 'Edit', edit_project_path(@project) %>
-</p>
+<main>
+  <% @project.phases.each do |phase| %>
+      <section>
+        <h4><%= phase.description %></h4>
+        <%= link_to 'Rename', edit_phase_path(phase.id), class: "btn btn-small" %>
+        
+          
+        <% phase.items.each do |item| %>
+          <%= link_to item_path do %>
+            <p><%= item.name %></p>
+            <p><%= item.description %></p>
+            <p><iframe width="260" height="200" src="https://www.youtube.com/embed/<%= item.url %>" frameborder="0" allowfullscreen></iframe></p>
+            <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
+          <% end %>
+          
+        <% end %>
+        <%= link_to 'Add Item', new_item_path(phase.id), class: "btn btn-small" %>
+        <hr>
+      </section>
 
-<strong>Phases:</strong>
-<% @project.phases.each do |phase| %>
-    <p>Description: <%= phase.description %></p>
-    <p><%= link_to 'Edit', edit_phase_path(phase.id) %></p>
-
-    <% phase.items.each do |item| %>
-      <%= link_to item_path do %>
-        <p><%= item.name %></p>
-        <p><%= item.description %></p>
-        <p><iframe width="260" height="200" src="https://www.youtube.com/embed/<%= item.url %>" frameborder="0" allowfullscreen></iframe></p>
-        <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
-      <% end %>
-
-    <% end %>
-
-    <%= link_to 'Add Item', new_item_path(phase.id) %>
-<% end %>
-<h3>New Phase</h3>
-<%= render 'phases/form' %>
-
-<%= link_to 'Back', projects_path %>
+  <% end %>
+  <section>
+    <%= render 'phases/form' %>
+  </section>
+</main>

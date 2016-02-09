@@ -1,3 +1,6 @@
+*:focus {
+  outline: none;
+}
 
 .field_with_errors {
   padding: 2px;
@@ -42,7 +45,176 @@ a {
   text-decoration: none;
   color: #333;
 
+  &:hover &:focus{
+    color: #f55;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  background: #f55;
+  height: 100%;
+  float: left;
+  position: fixed;
+  width: 30%;
+  min-width: 200px;
+  padding-top: 6em;
+
+  h2 {
+    font-size: 1.8em;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 1.3em;
+    font-weight: 300;
+  }
+
+  div {
+    float: right;
+    padding-right: 1.3em;
+    text-align: right;
+  }
+
+  .btn {
+    color: #fff;
+    font-size: 1em;
+    border: 1px solid #fff;
+  }
+
+  a:hover &:focus{
+    color: #333;
+    border: 1px solid #333;
+  }
+
+  #index:hover, #index:focus{
+    border: none;
+
+    h2 {
+      color: #333;
+    }
+  }
+}
+
+main {
+  float: left;
+  margin-left: 30%;
+  width: 70%;
+}
+
+section {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  padding: 0.5em 0;
+  clear: both;
+
+  .name .description {
+    width: 80%;
+    display: inline-block;
+    color: #fff;
+
+    h3 {
+      font-size: 1.4em;
+      line-height: 1.3em;
+      color: #fff;
+    }
+  }
+
+  .options {
+    display: inline-block;
+  }
+
+  i {
+    margin-left: 2em;
+  }
+}
+
+.btn {
+  background-color: rgba(0,0,0,0);
+  font-size: 1.1em;
+  display: inline-block;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+
+  &:hover {
+    color: #333;
+    border: 1px solid #333;
+  }
+}
+
+.form {
+  
+  &#project-form {
+    margin-top: 3.6em;
+  }
+
+  input {
+    font-size: 1.3em;
+
+    &.text {
+      width: 80%;
+    }
+
+    &.transparent {
+       background-color: rgba(0,0,0,0);
+       height: 2em;
+       border: none;
+       border-bottom: 1px solid gray;
+    }
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid #f55;
+      outline: none;
+
+      &::-webkit-input-placeholder {
+        color: #f55;
+      }
+    }
+
+  }
+
+  .back {
+    float: right;
+  }
+}
+
+.submit {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  font-weight: 400;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  font-size: 1em !important;
+
+
   &:hover {
     color: #f55;
   }
 }
+
+
+//////////////// projects#show styles //////////////////
+
+h4 {
+  // display: inline-block;
+}
+
+.btn.btn-small {
+  font-size: 0.8em;
+  padding: 0.3em 0.8em;
+  font-weight: 400;
+}
+
