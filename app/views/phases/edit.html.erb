@@ -1,14 +1,6 @@
-<header>
-  <div>
-    <%= link_to project_path(@phase.project_id), class: "project-name" do %>
-      <h3><%= @phase.project.name %></h3>
-    <% end %>
-    <%= link_to 'Projects', projects_path, class: "btn" %>
-  </div>
-</header>
+<%= render 'header' %>
 
 <main>
-  
   <%= render 'form' %>
   
   <%= link_to 'Back', @phase %>
