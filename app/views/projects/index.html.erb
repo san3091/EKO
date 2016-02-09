@@ -9,10 +9,10 @@
 <main>
   <% @projects.each do |project| %>
       <section class="project">
-        <div class="description">
+        <div class="name">
           <h3>
             <%= link_to project do %>
-              <%= project.description %>
+              <%= project.name %>
             <% end %>
           </h3>
         </div>

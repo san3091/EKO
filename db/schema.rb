@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 20160206210845) do
   add_index "phases", ["project_id"], name: "index_phases_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "items", "phases"

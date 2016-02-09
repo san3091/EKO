@@ -1,12 +1,14 @@
 <header>
   <div>
-    <h2>PROJECTS</h2>
+    <a href="/projects" id="index"><h2>PROJECTS</h2></a>
     <%= link_to 'New Project', new_project_path, class: "btn" %>
   </div>
 </header>
 
 <main>
-  <%= render 'form' %>
-  
-  <%= link_to 'Back', projects_path %>
+  <section>
+    <h3>Rename Project</h3>
+    <%= render 'form' %>
+   <!--  <%= link_to 'Projects', projects_path, class: "btn back" %> -->
+  </section>
 </main>
