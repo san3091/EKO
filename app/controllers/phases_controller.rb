@@ -21,6 +21,7 @@ class PhasesController < ApplicationController
 
   # GET /phases/1/edit
   def edit
+    # @project_id = Phase.find(params[:id]).project_id
   end
 
   # POST /phases

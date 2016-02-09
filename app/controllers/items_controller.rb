@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     get_project_id(params[:format])
+    @project = Project.find(@project_id)
   end
 
   # GET /items/1/edit

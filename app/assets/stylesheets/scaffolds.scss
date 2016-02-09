@@ -33,26 +33,18 @@
   }
 }
 
-/* ————————————  App styles  ———————————————— */
+/* ———————————————  App styles  ———————————————— */
 
 body {
   font-family: Lato, sans-serif;
   font-weight: 300;
   line-height: 18px;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-
-  &:hover &:focus{
-    color: #f55;
-  }
-}
-
-body {
   background-color: #fff;
   color: #333;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 header {
@@ -63,15 +55,16 @@ header {
   width: 30%;
   min-width: 200px;
   padding-top: 6em;
+  box-shadow: 0px 0px 7px 1px;
 
   h2 {
-    font-size: 1.8em;
+    font-size: 2.2em;
     color: #fff;
     letter-spacing: 2px;
   }
 
   h3 {
-    font-size: 1.2em;
+    font-size: 1.8em;
     color: #fff;
     letter-spacing: 2px;
     line-height: 1.3em;
@@ -86,20 +79,28 @@ header {
 
   .btn {
     color: #fff;
-    font-size: 1em;
+    font-size: 1.2em;
     border: 1px solid #fff;
   }
 
-  a:hover &:focus{
+  a:hover, a:focus{
     color: #333;
     border: 1px solid #333;
   }
 
-  #index:hover, #index:focus{
+  .project-name:hover {
     border: none;
 
-    h2 {
+    h3 {
       color: #333;
+    }
+  }
+
+  .index:hover, .index:focus{
+    border: none;
+
+    h2, h3 {
+      color: #333 !important;
     }
   }
 }
@@ -110,6 +111,15 @@ main {
   width: 70%;
 }
 
+a {
+  text-decoration: none !important;
+  color: #333;
+
+  &:hover &:focus{
+    color: #f55;
+  }
+}
+
 section {
   position: relative;
   width: 90%;
@@ -117,30 +127,44 @@ section {
   padding: 0.5em 0;
   clear: both;
 
-  .name .description {
+  .name, .description {
     width: 80%;
     display: inline-block;
     color: #fff;
 
     h3 {
-      font-size: 1.4em;
+      font-size: 1.8em;
       line-height: 1.3em;
-      color: #fff;
+      color: #333;
     }
   }
 
+    h4 {
+      font-size: 1.8em;
+      line-height: 1.3em;
+      color: #333;
+    }
+
   .options {
     display: inline-block;
+
+    a {
+      font-size: 1.2em;
+    }
   }
 
   i {
     margin-left: 2em;
+
+    &:hover {
+      color: #f55;
+    }
   }
 }
 
 .btn {
   background-color: rgba(0,0,0,0);
-  font-size: 1.1em;
+  font-size: 1.6em;
   display: inline-block;
   border: 1px solid #333;
   border-radius: 3px;
@@ -155,11 +179,11 @@ section {
 .form {
   
   &#project-form {
-    margin-top: 3.6em;
+    margin-top: 1.3em;
   }
 
   input {
-    font-size: 1.3em;
+    font-size: 1.7em;
 
     &.text {
       width: 80%;
@@ -195,9 +219,9 @@ section {
   font-weight: 400;
   border: 1px solid #333;
   border-radius: 3px;
-  padding: 0.5em 1em;
-  margin: 1em 0;
-  font-size: 1em !important;
+  padding: 0.4em 1em;
+  margin: 0.7em 0;
+  font-size: 1.2em !important;
 
 
   &:hover {
@@ -209,11 +233,11 @@ section {
 //////////////// projects#show styles //////////////////
 
 h4 {
-  // display: inline-block;
+  color: #333;
 }
 
 .btn.btn-small {
-  font-size: 0.8em;
+  font-size: 2.2em;
   padding: 0.3em 0.8em;
   font-weight: 400;
 }
