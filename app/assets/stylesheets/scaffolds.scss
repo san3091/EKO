@@ -254,3 +254,15 @@ h4 {
   margin: 3em 0;
 }
 
+#item-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  max-height: 370px;
+  white-space: nowrap;
+}
+
+article {
+  display: inline-block;
+  margin: 0 1em;
+}
+

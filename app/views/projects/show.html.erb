@@ -20,17 +20,20 @@
             <i class="fa fa-plus-square"></i>
           <% end %>
         </div>
-        
-          
-        <% phase.items.each do |item| %>
-          <%= link_to item_path do %>
-            <p><%= item.name %></p>
-            <p><%= item.description %></p>
-            <p><iframe width="260" height="200" src="https://www.youtube.com/embed/<%= item.url %>" frameborder="0" allowfullscreen></iframe></p>
-            <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
-          <% end %>
-          
-        <% end %>
+
+          <div id="item-container">
+            <% phase.items.each do |item| %>
+              <%= link_to item_path do %>
+            
+                <article>
+                  <h4><%= item.name %></h4>
+                  <p><%= item.description %></p>
+                  <iframe width="260" height="200" src="https://www.youtube.com/embed/<%= item.url %>" frameborder="0" allowfullscreen></iframe>
+                  <p><%= link_to 'Edit', edit_item_path(item.id) %></p>
+                </article>
+              <% end %>
+            <% end %>
+          </div>
       </section>
 
   <% end %>
