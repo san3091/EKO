@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :phase
+  belongs_to :project
 
   def self.get_video_id item
     url = item.url

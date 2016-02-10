@@ -242,12 +242,15 @@ section {
 
 h4 {
   color: #333;
+  display: inline-block;
 }
 
-.btn.btn-small {
-  font-size: 2.2em;
+.btn-small {
+  font-size: 1em;
   padding: 0.3em 0.8em;
-  font-weight: 400;
+  font-weight: 300;
+  float: right;
+  margin-top: 2.6em;
 }
 
 .item-field {
@@ -257,7 +260,7 @@ h4 {
 #item-container {
   overflow-x: scroll;
   overflow-y: hidden;
-  max-height: 370px;
+  max-height: 390px;
   white-space: nowrap;
 }
 

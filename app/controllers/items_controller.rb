@@ -82,11 +82,13 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    @project_id = @item.project_id
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+    redirect_to(project_path(@project_id))
   end
 
   private
@@ -99,6 +101,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:url, :phase_id, :name, :description)
+      params.require(:item).permit(:url, :phase_id, :name, :description, :project_id)
     end
 end
