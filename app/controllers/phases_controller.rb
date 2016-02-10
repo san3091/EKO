@@ -59,7 +59,7 @@ class PhasesController < ApplicationController
   def destroy
     @phase.destroy
     respond_to do |format|
-      format.html { redirect_to phases_url, notice: 'Phase was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Phase was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

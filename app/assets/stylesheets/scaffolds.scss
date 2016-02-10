@@ -127,7 +127,7 @@ section {
   padding: 0.5em 0;
   clear: both;
 
-  .name, .description {
+  .name {
     width: 80%;
     display: inline-block;
     color: #fff;
@@ -137,6 +137,10 @@ section {
       line-height: 1.3em;
       color: #333;
     }
+  }
+
+  .description {
+    display: inline-block;
   }
 
     h4 {
@@ -264,8 +268,21 @@ h4 {
   white-space: nowrap;
 }
 
+#new-phase {
+  max-height: 150px;
+}
+
 article {
   display: inline-block;
   margin: 0 1em;
 }
+
+#phase-form {
+  margin-top: 1em !important;
+}
+
+
+
+
+
 

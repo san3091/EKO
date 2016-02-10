@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    redirect_to(projects_path)
   end
 
   # GET /items/1
@@ -82,13 +82,12 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    @project_id = @item.project_id
+
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to(project_path(@project_id))
   end
 
   private

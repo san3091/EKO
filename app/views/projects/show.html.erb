@@ -14,10 +14,13 @@
         <div class="description">
           <h4><%= phase.description %></h4>
         </div>
-        <div class="options">
+        <div class="options btn-small">
           <%= link_to 'Rename', edit_phase_path(phase.id) %>
           <%= link_to(new_item_path(phase.id)) do %>
             <i class="fa fa-plus-square"></i>
+          <% end %>
+          <%= link_to phase, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash"></i>
           <% end %>
         </div>
 
