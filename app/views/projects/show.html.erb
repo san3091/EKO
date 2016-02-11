@@ -34,13 +34,11 @@
 
           <div id="item-container">
             <% phase.items.each do |item| %>
-              <%= link_to item_path do %>
             
                 <article>
                   <h4><%= item.name %></h4>
 
                     <div class="btn-small">
-                      <%= link_to 'Edit', edit_item_path(item.id)%>
                       <%= link_to item, method: :delete, data: { confirm: 'Are you sure?' } do %>
                         <i class="fa fa-trash"></i>
                       <% end %>
@@ -50,7 +48,6 @@
                   <iframe width="280" height="200" src="https://www.youtube.com/embed/<%= item.url %>" frameborder="0" allowfullscreen></iframe>
                   
                 </article>
-              <% end %>
             <% end %>
           </div>
       </section>
