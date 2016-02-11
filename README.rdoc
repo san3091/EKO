@@ -1,7 +1,11 @@
 == README
 
-Yoke is an application that provides a platform for artist and other various
-users to collaborate project ideas.
+#EKO
 
-A user can have their projects evolve through phases of merged project
-ideas with other users.
+EKO is an application that provides a platform for creatives to collaborate in a structured way across geographic boundaries. It is a place to keep track of the evplition of your ideas as well as creating an idea bank to draw from for other future projects.
+
+##Features to Implement
+
++ User authentication
++ Visualization of item relationship (tree structure)
++ Take advantage of the YouTube API
